@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>图片切换</title>
+<meta charset="UTF-8">
+<style type="text/css">
+ ul{padding: 0;margin: 0;}
+ li{list-style: none;}
+ body{background: #333;}
+ .box{ width: 400px;height: 500px;position: relative;float: left;margin-right: 60px;}
+ .box img{ width: 400px;height: 500px; }
+ .box ul{width:40px;position: absolute;top: 0;right: -50px;}
+ .box li{width: 40px;height: 40px;margin-bottom: 4px;background: #666;}
+ .box .active{background: #FC3;}
+ .box span{top: 0;}
+  .box p{bottom: 0;}
+ .box p,.box span{position:absolute;left:0;width: 400px;height: 30px;line-height: 30px;text-align: center;color: #fff;background: #000;}
+</style>
+<script>
+window.onload=function(){
+fn('pic1');
+fn('pic2');
+};
+   // 定时器
+   var timer = null;
+   timer = setInterval(function (){
+    num++;
+    num%=arrurl.length;
+    fn();
+   } ,3000);
+function fn(id){
+  var odiv=document.getElementById(id);
+  var oimg=odiv.getElementsByTagName('img')[0];
+  var ospan=odiv.getElementsByTagName('span')[0];
+  var op=odiv.getElementsByTagName('p')[0];
+  var oul =odiv.getElementsByTagName('ul')[0];
+  var ali =oul.getElementsByTagName('li');
+  var arrurl=['if/1.jpg','if/2.jpg','if/3.jpg','if/4.jpg'];
+  var arrtext=['图一','图二','图三','图四'];
+   var num=0;
+   var oldli = null;
+   for (var i = 0; i < arrurl.length; i++) {
+     oul.innerHTML+='<li></li>';
+   }
+   oldli=ali[num];
+
+
+//初始化
+ oimg.src=arrurl[num];
+ ospan.innerHTML=1+num+'/'+arrurl.length;
+ op.innerHTML=arrtext[num];
+ ali[num].className='active';
+
+ for (var i = 0; i < ali.length; i++) {
+   ali[i].index=i;
+   ali[i].onclick=function(){
+
+    oimg.src=arrurl[this.index];
+    op.innerHTML=arrtext[this.index];
+    ospan.innerHTML=1+this.index+'/'+arrtext.length;
+   /* for (var i = 0; i < ali.length; i++) {
+      ali[i].className='';
+    }
+    this.className='active';*/
+    oldli.className='';
+    oldli=this;
+    this.className='active';
+
+   };
+ }
+
+};
+</script>
+</head>
+<body>
+<div id="pic1" class="box">
+ <img src=""> 
+ <span>加载</span>
+ <p>加载</p>
+ <ul>
+ </ul>
+</div>
+
+
+<div id="pic2" class="box">
+ <img src=""> 
+ <span>加载</span>
+ <p>加载</p>
+ <ul>
+ </ul>
+</div>
+</body>
+</html>

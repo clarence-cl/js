@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ajax</title>
+</head>
+<body>
+
+</body>
+ <script type="text/javascript">
+   //生成ajax对象
+   xhr = new XMLHttpRequest();
+   xhr.open('get','http://yd.taxchina.com/wcm/inside/gkk/interface/productList.aspx?mode=2',true )
+   xhr.send();
+
+   //js监听整个通讯过程
+   xhr.onreadystatechange = function(){
+     if(xhr.readyState==4){
+      r=xhr.responseText;
+      alert(r)
+     }
+   }
+ </script>
+</html>

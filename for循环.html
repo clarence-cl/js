@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>标签</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+li{height: 30px;border-bottom: 1px solid #333;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var oul = document.getElementById('list');
+		var ali = oul.getElementsByTagName('li');
+		var arr=['今天','明天','后天']
+
+		for (var i = 0;i<ali.length;i++) {
+		 ali[i].innerHTML= arr[i];
+		 ali[i].onclick = function(){
+         ali.style.display = 'none';
+}
+		}
+	};
+</script>
+</head>
+<body>
+	<ul id="list">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

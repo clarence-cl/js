@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>面向对象</title>
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.leftbtn{
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			left: 10px;
+			width: 30px;
+			height: 30px;
+			background-color: orange;
+		}
+		.rightbtn{
+			position: absolute;
+			top: 50%;
+			margin-top: -15px;
+			right: 10px;
+			width: 30px;
+			height: 30px;
+			background-color: orange;
+		}
+		.circls{
+			position: absolute;
+			bottom: 10px;
+			left: 100px;
+			list-style: none;
+		}
+		.circls li{
+			float: left;
+			width: 20px;
+			height: 20px;
+			background-color:orange;
+			margin-right: 10px;
+		}
+		.circls li.cur{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+   <div id="box">
+   	
+   </div>
+</body>
+<script type="text/javascript">
+	function Carouser(json){
+		this.$dom = $("#"+json.id)
+		this.imageul = null;
+		this.imageslist = null;
+		this.leftbtn = null;
+		this.rightbtn = null;
+		this.circleOl =null;
+		this.circlelist = null;
+		this.interval = json.interval;
+		this.images = json.images;
+		this.width = json.width;
+        this.height = json.height;
+        this.animateDuration = json.animateDuration;
+        //图片长度
+        this.pictureLen = json.images.length;
+        //信号量
+        this.idx = 0;
+		//初始化
+		this.init();
+		//监听
+		this.bindEvent();
+        //定时器
+        this.autoPlay();
+	}
+
+	Carouser.prototype.init = function(){
+		//创建ul节点
+		this.imageul = $("<ul></ul>");
+		this.$dom.append(this.imageul);
+        //创建li节点
+		 for (var i = 0; i < this.pictureLen; i++) {
+		 	$("<li> <img src='"+this.images[i]+"'> </li>").appendTo(this.imageul)
+		};
+		//获得图片
+		this.imageslist = this.imageul.find("li");
+		//布局
+		this.$dom.css({
+			"width":this.width,
+			"height":this.height,
+			"position":"relative",
+			"overflow":"hidden"
+
+		})
+		//图片隐藏
+		this.imageslist.css({
+			"position":"absolute",
+			"left":this.width,
+			"top":0
+		});
+		this.imageslist.eq(0).css("left",0)
+		//按钮
+		this.leftbtn = $("<a href='javascript:;' class='leftbtn'></a>");
+		this.rightbtn = $("<a href='javascript:;' class='rightbtn'></a>");
+		this.leftbtn.appendTo(this.$dom);
+		this.rightbtn.appendTo(this.$dom);
+		//圆点
+		this.circleOl = $("<ol class='circls'></ol>");
+		this.circleOl.appendTo(this.$dom);
+		//创建li节点
+		 for (var i = 0; i < this.pictureLen; i++) {
+		 	$("<li></li>").appendTo(this.circleOl)
+		};
+		//获得引用
+		this.circlelist = this.circleOl.find("li");
+	    //添加cur
+	    this.circlelist.eq(0).addClass("cur")
+	};
+
+   //监听
+   Carouser.prototype.bindEvent=function(){
+         var self = this;
+         //右边监听
+         this.rightbtn.click(function(){
+         	if(self.imageslist.is(":animated")){
+         		return;
+         	}
+         	self.showNext()
+         });
+         //左边监听
+        this.leftbtn.click(function(){
+        	if(self.imageslist.is(":animated")){
+        		return;
+        	}
+        	self.showPrev()
+        })
+        //圆点监听
+        this.circlelist.click(function(){
+        	self.show($(this).index())
+        })
+        //鼠标悬停
+        this.$dom.mouseenter(function(){
+        	clearInterval(self.timer)
+        })
+        this.$dom.mouseleave(function(){
+        	self.autoPlay()
+        })
+   };
+   //展示下一张
+   Carouser.prototype.showNext = function(){
+   	this.imageslist.eq(this.idx).animate({"left":-this.width},this.animateDuration)
+      this.idx++;
+      if(this.idx>this.pictureLen-1){
+      	this.idx = 0;
+      }
+    this.imageslist.eq(this.idx).css({"left":this.width}).animate({"left":0},this.animateDuration);
+       this.changeCirclesCur();
+   };
+   //展示上一张
+   Carouser.prototype.showPrev = function(){
+   	this.imageslist.eq(this.idx).animate({"left":this.width},this.animateDuration)
+      this.idx--;
+      if(this.idx<0){
+      	this.idx = this.pictureLen-1;
+      }
+    this.imageslist.eq(this.idx).css({"left":-this.width}).animate({"left":0},this.animateDuration);
+         this.changeCirclesCur();
+   };
+   //展示任意一张
+   Carouser.prototype.show = function(number){
+      var old = this.idx;
+      this.idx = number;
+      if(this.idx>old){
+      		this.imageslist.eq(old).animate({"left":-this.width},this.animateDuration);
+      		this.imageslist.eq(this.idx).css({"left":this.width}).animate({"left":0},this.animateDuration);
+      	   }else if(this.idx<old){
+            this.imageslist.eq(this.idx).animate({"left":this.width},this.animateDuration);
+            this.imageslist.eq(old).css({"left":-this.width}).animate({"left":0},this.animateDuration);
+      	   }
+      	    this.changeCirclesCur();
+   };
+   //圆点变化
+    Carouser.prototype.changeCirclesCur = function(){
+    	this.circlelist.eq(this.idx).addClass("cur").siblings().removeClass("cur")
+    };
+    //自动轮播
+    Carouser.prototype.autoPlay = function(){
+    	var self = this;
+   	this.timer = setInterval(function(){
+    		self.showNext()
+    	},this.interval)
+    }
+	var c = new Carouser({
+		"id":"box",
+		"images":[
+		"if/1.jpg",
+		"if/2.jpg",
+		"if/3.jpg",
+		"if/4.jpg"
+		],
+		"width":1000,
+		"height":540,
+		"animateDuration":300,
+		"interval":1000
+	})
+/*	闭包for (var i=1; i<=5; i++) {
+ 
+    (function(i) {
+        setTimeout( function timer() {
+            console.log(i);
+        }, i*1000 );
+    })(i)
+}*/
+</script>
+
+</html>

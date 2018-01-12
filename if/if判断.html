@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>标签</title>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+window.onload=function(){
+	var otex=document.getElementById('tex')
+	var obtn=document.getElementById('btn')
+	var oima=document.getElementById('ima')
+	obtn.onclick=function(){
+	if (otex.value=='css') {
+    alert('你输入的是：'+otex.value+'通过验证');
+	}
+	else if(otex.value=='js'){alert('你输入的是：'+otex.value+'通过验证');}
+	else if(otex.value=='') {alert('请输入点内容');}
+};
+     var onoff=true;
+   oima.onclick = function(){
+       
+    if (onoff) {oima.src='1.jpg';
+    	onoff=false;}
+    else{oima.src='2.jpg';
+    	onoff=true;}
+};
+};
+</script>
+</head>
+<body>
+	请输入类型：<input id="tex" type="text" />
+	<input id="btn" type="button" value="验证"/><br>
+	<img id="ima" src="1.jpg">
+</body>
+</html>

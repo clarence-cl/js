@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>索引值</title>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	window.onload = function(){
+     var abtn=document.getElementsByTagName('input');
+     var ap=document.getElementsByTagName('p');
+     var arr=['1','2','3'];
+     for (var i = 0; i < abtn.length; i++) {
+          abtn[i].index=i;
+          abtn[i].onclick=function(){
+              this.value= arr[this.index];
+              ap[this.index].innerHTML=arr[this.index];
+          };
+     }
+	};
+</script>
+</head>
+<body>
+<input type="button" value="btn1"/>   
+<input type="button" value="btn2"/> 
+<input type="button" value="btn3"/> 
+<p>a</p>
+<p>b</p>
+<p>c</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#qq{width: 200px;height: 400px;background: #f9c;}
+		#title{width:240px;height: 180px;background: #fc6;position: absolute;top: 10px;left: 220px;display: none; }
+	</style>
+</head>
+<body>
+<div id="qq"></div>
+<div id="title"></div>
+<script type="text/javascript">
+	window.onload=function () {
+		var qq = document.getElementById('qq');
+		var title = document.getElementById('title');
+		var timer = null;
+		qq.onmouseover=show;
+		qq.onmouseou=hide;
+		title.onmouseover=show;
+		title.onmouseout=hide;
+		function show() {
+			clearInterval(timer);
+			title.style.display= 'block';
+		}
+		function hide() {
+			timer= setTimeout(function(){
+			title.style.display= 'none';
+		},300);
+		}
+
+	}
+</script>
+</body>
+</html>

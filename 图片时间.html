@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>时间</title>
+</head>
+<body>
+<p style="font-size:16px;"></p>
+<img src="img/0.jpg">
+<img src="img/0.jpg">
+<img src="img/0.jpg">
+<img src="img/0.jpg">
+<img src="img/0.jpg">
+<img src="img/0.jpg">
+<script type="text/javascript">
+  window.onload=function () {
+    var op = document.getElementsByTagName('p')[0];
+    var oimg = document.getElementsByTagName('img');
+    fntime();
+    setInterval(fntime,1000)
+    function fntime() {
+   mytime = new Date();
+    var ihours = mytime.getHours();
+    var imin = mytime.getMinutes();
+    var isec = mytime.getSeconds();
+    var str = totwo(ihours)+totwo(imin)+totwo(isec); 
+     op.innerHTML = str;
+  for (var i=0; i<str.length;i++) {
+    
+    oimg[i].src= 'img/'+str.charAt(i)+'.jpg'
+  }
+}
+    function totwo(n){
+     if(n<10){return'0'+n}else{return ''+n;}
+    // return n<10?'0'+n:'n';
+    }
+}
+</script>
+</body>
+</html>

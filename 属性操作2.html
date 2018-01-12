@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>标签</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	#box{width: 200px;height: 200px;border: 2px solid red;}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var odiv = document.getElementById('box');
+		var oin1 = document.getElementById('in1');
+		var oin2 = document.getElementById('in2');
+		var obtn = document.getElementById('btn');
+
+		obtn.onclick = function(){
+			oin1.value;
+			oin2.value;
+       odiv.style[oin1.value] = oin2.value;
+		};
+	};
+</script>
+</head>
+<body>
+	<div id="box"></div><br>
+	输入属性名称：<input id="in1" type="text" /><br/>
+	输入属性值：<input id="in2" type="text"/>
+	<input id="btn" type="button" value="确认" />
+</body>
+</html>

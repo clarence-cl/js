@@ -1,0 +1,23 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+	</head>
+	<style type="text/css">
+		#adiv{background:red;width:100px;height:200px;}
+	</style>
+	<body>
+	<div id="adiv"></div>
+	</body>
+	<script type="text/javascript">
+	var odiv = document.getElementById('adiv');
+alert(getstyle(odiv,'height'))
+		function getstyle(obj,attr) {
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj)[attr];
+		}
+	}
+	</script>
+	</html>

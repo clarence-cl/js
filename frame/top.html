@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<button id="top">top</button>
+<button id="left">left</button>
+<button id="right">right</button>
+</body>
+<script type="text/javascript">
+	 topobj=document.getElementById('top')
+	 leftobj=document.getElementById('left')
+	 rightobj=document.getElementById('right')
+	 topobj.onclick =function(){
+	 	var objs = window.top.frames;
+	 	objs[0].document.body.style.background="#f00"
+	 }
+</script>
+</html>

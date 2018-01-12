@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>导航</title>
+		<script type="text/javascript" src = "jquery-1.11.3.js"></script>
+	</head>
+	<style type="text/css">
+	ul{
+		list-style: none;
+	}
+		.menu{
+			height: 470px;
+		}
+		.div2{
+			width: 1200px;
+			height: 470px;
+			position: relative;
+		}
+		.div3{
+			width: 150px;
+			height: 470px;
+			background: red;
+		}
+		.div3 ul li{
+          background: #b61d1d;
+          padding-left: 15px;
+          line-height: 30px;
+		}
+		.div3 ul li span{
+			color: #fff;
+		}
+		.div3 ul li:hover{
+			cursor: pointer;
+		}
+		.right{
+			width: 1020px;
+			height:440px;
+			background:#eee;
+			position: absolute;
+			top: 0px;
+			left: 150px;
+			padding: 15px;
+			color: #000;
+			display: none;
+		}
+
+	</style>
+	<body>
+     <div class="menu">
+     	<div class="div2">
+     		<div class="div3">
+     			<ul>
+     				<li>
+     				  <span>
+     				      家用电器
+     				   </span>
+     				   <div class="right">
+     				   	<h3>家用电器</h3>
+     				   	<p>11111具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书</p>
+     				   </div>
+     				</li>
+     				<li>
+     					<span>
+     				      手机数码
+     				   </span>
+     				   <div class="right">
+     				   	<h3>手机数码</h3>
+     				   	<p>22222具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书</p>
+     				   </div>
+     				</li>
+     				<li>
+     					 <span>
+     				      电脑办公
+     				   </span>
+     				   <div class="right">
+     				   	<h3>电脑办公</h3>
+     				   	<p>3333具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书</p>
+     				   </div>
+     				</li>
+     				<li>
+     					<span>
+     				      家具家装
+     				   </span>
+     				   <div class="right">
+     				   	<h3>家具家装</h3>
+     				   	<p>444具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书</p>
+     				   </div>
+     				</li>
+     				<li>
+     					<span>
+     				      家用电器
+     				   </span>
+     				   <div class="right">
+     				   	<h3>家用电器</h3>
+     				   	<p>具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书具有本专业或相关专业学历证书，取得本职业低一级职业资格证书后，连续从事本职业工作达到规定时间要求，经本职业所申报等级正规培训达规定标准学时数，并取得结业证书</p>
+     				   </div>
+     				</li>
+     			</ul>
+     		</div>
+     	</div>
+     </div>
+	</body>
+	<script type="text/javascript">
+		$(".div3 li").mouseenter(function(){
+			x=$(this).position().left;
+			y=$(this).position().top;
+			$(this).css({'background':'#eee'});
+			$(this).find('span').css({'color':'#b61d1d'})
+			$(".div3 li").not($(this)).css({'background':'#b61d1d'});
+			$(this).find('.right').show()
+			$('.right').not($(this).find('.right')).hide();
+		})
+		$(".div3 li").mouseleave(function(){
+			$(this).find(".right").hide();
+			$(this).find('span').css({'color':'#fff'});
+			$(this).css({'background':'#b61d1d'})
+		})
+	</script>
+</html>

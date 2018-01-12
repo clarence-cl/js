@@ -1,0 +1,797 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="·¿µØ²úÓª¸ÄÔöÅàÑµ,½¨ÖþÒµÓª¸ÄÔöÅàÑµ,·¿µØ²ú½¨ÖþÒµÖ±²¥¿Î³Ì"/>
+<meta name="description" content="ÖÐË°ÍøÍ¨¹ý±¾´ÎÖ±²¥¿Î³ÌÎª½¨Öþ·¿µØ²úÒµÒÔÍâµÄÔöÖµË°ÄÉË°ÈË½²½â½¨Öþ·¿µØ²úÒµÓª¸ÄÔöÐÂÕþ²ßµÄÒªµãÒÔ¼°¶ÔÆäËûÆóÒµ²úÉúµÄÓ°Ïì¡£
+" />
+<title>八月公开课</title>
+<link href="css/index.css" type="text/css"  rel="stylesheet"/>
+<link href="css/zxzbstyle.css" type="text/css" rel="stylesheet" /> 
+<script src="js/jquery-1.2.4b.js" type="text/javascript"></script>
+<style type="text/css">
+h3{ width:230px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+</style>
+
+<!--<script src="../01wcm_js/js/ui.core.js" type="text/javascript"></script>
+<script src="../01wcm_js/js/ui.tabs.js" type="text/javascript"></script>-->
+
+      <script type="text/javascript">
+            $(function() {
+                $('#rotate > ul').tabs({ fx: { opacity: 'toggle' } }).tabs('rotate', 2000);
+            });
+        </script>  
+
+
+<script type="text/javascript" src="js/cs_q.js"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/slideshow.js"></script> 
+<!--Ëæ»ú³öÏÖQQºÅÂë¿ªÊ¼-->
+<script language="JavaScript">
+var ArrList=new Array();
+ArrList[0]='1310523381';
+ArrList[1]='2212884833';
+ArrList[2]='2374381289';
+//alert(getArrayItems(ArrList,3));
+function getArrayItems(arr, num) {
+    
+    var temp_array = new Array();
+    for (var index in arr) {
+        temp_array.push(arr[index]);
+    }
+     
+    var return_array = new Array();
+    for (var i = 0; i<num; i++) {
+  
+        if (temp_array.length>0) {
+             
+            var arrIndex = Math.floor(Math.random()*temp_array.length);
+            
+            return_array[i] = temp_array[arrIndex];
+            
+            temp_array.splice(arrIndex, 1);
+        } else {
+             
+            break;
+        }
+    }
+    return return_array;
+}
+</script>
+<!--Ëæ»ú³öÏÖQQºÅÂë½áÊø-->
+<script type="text/javascript">
+function shows()
+{
+window.location.href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42685"; 	
+} 
+function showss()
+{
+window.location.href="http://user.taxchina.com/wcm/cswsp/pay/ZBLogin.aspx"; 
+}
+/*Êó±ê¾­¹ý½üÆÚÊÓÆµÍ¼Æ¬ÑùÊ½¿ªÊ¼*/
+   $(function()
+	  {
+		  
+		   $(".zbmx_ktbm_tu1>img").hover(function()
+		                        {
+									$(this).next("span").stop(false,true).slideDown(400)//.slideDown(400)
+							    }//µã»÷spanÊ±£¬ÕÒÍ¬¼¶µÄµÜµÜul£¬À­ÏÂ»òÊÕ»Ø
+								,function()
+								 {
+								   //$("#box>ul>li>span:animated").stop(false,true);//ºÍºóÃæ´òstopÒ»Ñù
+								   $(this).next("span").stop(false,true).slideUp(400)
+							     })
+	  });
+</script>
+
+
+<!--»ÃµÆÆ¬Ð§¹ûJS´úÂë-->
+<script type="text/javascript">
+function $(id) { return document.getElementById(id); }
+
+function addLoadEvent(func){
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function(){
+			oldonload();
+			func();
+		}
+	}
+}
+
+function moveElement(elementID,final_x,final_y,interval) {
+  if (!document.getElementById) return false;
+  if (!document.getElementById(elementID)) return false;
+  var elem = document.getElementById(elementID);
+  if (elem.movement) {
+    clearTimeout(elem.movement);
+  }
+  if (!elem.style.left) {
+    elem.style.left = "0px";
+  }
+  if (!elem.style.top) {
+    elem.style.top = "0px";
+  }
+  var xpos = parseInt(elem.style.left);
+  var ypos = parseInt(elem.style.top);
+  if (xpos == final_x && ypos == final_y) {
+		return true;
+  }
+  if (xpos < final_x) {
+    var dist = Math.ceil((final_x - xpos)/10);
+    xpos = xpos + dist;
+  }
+  if (xpos > final_x) {
+    var dist = Math.ceil((xpos - final_x)/10);
+    xpos = xpos - dist;
+  }
+  if (ypos < final_y) {
+    var dist = Math.ceil((final_y - ypos)/10);
+    ypos = ypos + dist;
+  }
+  if (ypos > final_y) {
+    var dist = Math.ceil((ypos - final_y)/10);
+    ypos = ypos - dist;
+  }
+  elem.style.left = xpos + "px";
+  elem.style.top = ypos + "px";
+  var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+  elem.movement = setTimeout(repeat,interval);
+}
+
+function classNormal(iFocusBtnID,iFocusTxID){
+	var iFocusBtns= $(iFocusBtnID).getElementsByTagName('li');
+	var iFocusTxs = $(iFocusTxID).getElementsByTagName('li');
+	for(var i=0; i<iFocusBtns.length; i++) {
+		iFocusBtns[i].className='normal';
+		iFocusTxs[i].className='normal';
+	}
+}
+
+function classCurrent(iFocusBtnID,iFocusTxID,n){
+	var iFocusBtns= $(iFocusBtnID).getElementsByTagName('li');
+	var iFocusTxs = $(iFocusTxID).getElementsByTagName('li');
+	iFocusBtns[n].className='current';
+	iFocusTxs[n].className='current';
+}
+
+function iFocusChange() {
+	if(!$('ifocus')) return false;
+	$('ifocus').onmouseover = function(){atuokey = true};
+	$('ifocus').onmouseout = function(){atuokey = false};
+	var iFocusBtns = $('ifocus_btn').getElementsByTagName('li');
+	var listLength = iFocusBtns.length;
+	iFocusBtns[0].onmouseover = function() {
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (listLength>=2) {
+		iFocusBtns[1].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-420,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',1);
+		}
+	}
+	if (listLength>=3) {
+		iFocusBtns[2].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-840,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',2);
+		}
+	}
+	if (listLength>=4) {
+		iFocusBtns[3].onmouseover = function() {
+			moveElement('ifocus_piclist',0,-1260,5);
+			classNormal('ifocus_btn','ifocus_tx');
+			classCurrent('ifocus_btn','ifocus_tx',3);
+		}
+	}
+}
+
+setInterval('autoiFocus()',8000);
+var atuokey = false;
+function autoiFocus() {
+	if(!$('ifocus')) return false;
+	if(atuokey) return false;
+	var focusBtnList = $('ifocus_btn').getElementsByTagName('li');
+	var listLength = focusBtnList.length;
+	for(var i=0; i<listLength; i++) {
+		if (focusBtnList[i].className == 'current') var currentNum = i;
+	}
+	if (currentNum==0&&listLength!=1 ){
+		moveElement('ifocus_piclist',0,-420,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',1);
+	}
+	if (currentNum==1&&listLength!=2 ){
+		moveElement('ifocus_piclist',0,-840,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',2);
+	}
+	if (currentNum==2&&listLength!=3 ){
+		moveElement('ifocus_piclist',0,-1260,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',3);
+	}
+	if (currentNum==3 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (currentNum==1&&listLength==2 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+	if (currentNum==2&&listLength==3 ){
+		moveElement('ifocus_piclist',0,0,5);
+		classNormal('ifocus_btn','ifocus_tx');
+		classCurrent('ifocus_btn','ifocus_tx',0);
+	}
+}
+addLoadEvent(iFocusChange);
+</script>
+
+</head>
+
+<body>
+<!--°Ù¶È¿Í·þ´úÂë-->
+<div id="qq_icon"></div>
+<div id="cs_online">
+  <ul class='qq_context'>
+    <li> <span class='span_t'>ÔÚÏß¿Í·þ01£º</span> <span class='qq_num'></span> </li>
+    <li> <span class='span_t'>ÔÚÏß¿Í·þ02£º</span> <span class='qq_num'></span> </li>
+    <li> <span class='span_t'>ÔÚÏß¿Í·þ03£º</span> <span class='qq_num'></span> </li>
+  </ul>
+</div>
+<script type="text/javascript">
+	myEvent(window,'load',function(){
+		dealy('qq_icon',1);						//1ÃëºóÏÔÊ¾QQÍ¼±ê£¬Ä¬ÈÏÎª1Ãë£¬¿É×ÔÐÐÉèÖÃ
+		settop('qq_icon','cs_online',150);		//ÉèÖÃÔÚÏß¿Í·þµÄ¸ß¶È£¬Ä¬ÈÏ150£¬¿É×ÔÐÐÉèÖÃ
+		var span_q = getbyClass('cs_online','qq_num');
+		setqq(span_q,[getArrayItems(ArrList,1),getArrayItems(ArrList,1),getArrayItems(ArrList,1)]);		//ÌîÐ´5¸öQQºÅÂë
+		click_fn('qq_icon','cs_online');
+	});
+</script>
+<!--°Ù¶È¿Í·þ´úÂë½áÊø-->
+
+<!--Í·²¿¿ªÊ¼-->
+<!--#include virtual="/public/top.shtml" -->
+<!--Í·²¿½áÊø-->
+
+<!--bannerÇøÓò¿ªÊ¼-->
+<div class="banner">
+<iframe src="huandeng.html" width="1004" height="267" name="hd" scrolling="NO" frameborder="0"></iframe>
+</div>
+<!--bannerÇøÓò½áÊø-->
+
+<!--½üÆÚ¿Î³Ì¿ªÊ¼-->
+<div class="jqzb_line">
+<span>½üÆÚ¿Î³Ì</span>
+</div>
+<div class="block_jqzb"  id="ifocus">
+<div id="ifocus_pic">
+<div id="ifocus_piclist">
+<ul>
+
+
+<li>
+<div class="content">
+<img src="images/hsqj17.jpg" />
+<div class="fenge">&nbsp;</div>
+<h3>¡¶½¨ÖþÒµÆóÒµÓª¸ÄÔöÉæË°»á¼ÆºËËãÊµÎñ¼°·çÏÕ¹Ü¿Ø¡·</h3>
+<dl>
+<dt>¿ÎÌâ´ó¸Ù£º</dt>
+<dd>1.½¨ÖþÒµÓª¸ÄÔö»á¼Æ¿ÆÄ¿ÉèÖÃ¼°ÔöÖµË°·¢Æ±¶Ô»á¼ÆºËËãµÄÓ°Ïì£»</dd>
+<dd>2.½¨ÖþÒµÓª¸ÄÔöÊÕÈë¼°ÏúÏîË°¶îµÄ»á¼ÆºËËãÊµÎñ¼°¹Ü¿Ø£»</dd>
+<dd>3.½¨ÖþÒµÓª¸ÄÔö³É±¾·ÑÓÃ¼°½øÏîË°¶î»á¼ÆºËËãÊµÎñ¼°¹Ü¿Ø£»</dd>
+<dd>4.½¨ÖþÒµÓª¸ÄÔö×Ê²ú¼°½øÏîË°¶îµÄ»á¼ÆºËËãÊµÎñ¼°¹Ü¿Ø£»</dd>
+<dd>5.½¨ÖþÒµÆóÒµÓ¦½»Ë°·ÑºËËãÊµÎñ¼°ÔöÖµË°³ö¿ÚÍË£¨Ãâ£©Ë°ÊµÎñ¼°¹Ü¿Ø£»</dd>
+<dd>6.½¨ÖþÒµÓª¸ÄÔöÌØÊâÒµÎñ´¦ÀíÊµÎñ</dd>
+</dl>
+<div class="more">
+<p><span>½²Ê¦£º<b style="color:#F00; font-weight:normal;">ÏÄÎÄ½Ü</b></span></p>
+<p><span>¿ª¿ÎÊ±¼ä£º2016Äê7ÔÂ26ÈÕ  9:00-12:00</span></p>
+<!--<span class="smallfont">£¨ÒÑ½áÊø£©</span>-->
+<!--<p><span>¿Î³Ì½²Òå£º</span><a href="#" class="link01">µã»÷²é¿´</a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Î³Ì»Ø·Å£º</span><a href="#" class="link02">ÉÏ¼¯</a><span>&nbsp;/&nbsp;</span><a href="#" class="link02">ÏÂ¼¯</a></p>-->
+<p><span>ÇÀ¹º¼Û£º</span><span class="bigfont">&yen;500</span> Ôª</p>
+</div>
+<div class="btn">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42942" target="_blank" class="btn_buy"><img src="images/btn_buy.png" /></a>
+<a href="http://user.taxchina.com/wcm/cswsp/pay/ZBLogin.aspx?classid=844260" target="_blank" class="btn_study"><img src="images/btn_study.png" /></a>
+</div>
+</div>
+</li>
+
+<li>
+<div class="content">
+<img src="images/hsqj18.jpg" />
+<div class="fenge">&nbsp;</div>
+<div class="info">
+<h3>¡¶·¿µØ²úÐÐÒµÔöÖµË°»á¼ÆºËËãÖØµã½âÎö¡·</h3>
+<dl>
+<dt>¿ÎÌâ´ó¸Ù£º</dt>
+<dd>1.ÔöÖµË°»á¼ÆºËËã¿ÆÄ¿ÉèÖÃ¹æÔò</dd>
+<dd>2.·¿µØ²úÐÐÒµÔöÖµË°½øÏîË°¶î»á¼ÆºËËãÖØµã½âÎö</dd>
+<dd>3.·¿µØ²úÐÐÒµÔ¤ÊÛ»·½ÚÔöÖµË°»á¼ÆºËËãÖØµã½âÎö</dd>
+<dd>4.·¿µØ²úÐÐÒµÔöÖµË°ÏúÏîË°¶î»á¼ÆºËËãÖØµã½âÎö</dd>
+<dd>5.·¿µØ²úÐÐÒµ²»µÃµÖ¿Û½øÏîË°¶îµÄ»á¼ÆºËËã</dd>
+<dd>6.·¿µØ²úÐÐÒµÉê±¨µÄ»á¼Æ´¦Àí</dd>
+</dl>
+<div class="more">
+<p><span>½²Ê¦£º<b style="color:#F00; font-weight:normal;">Ëïì¿</b></span></p>
+<p><span>¿ª¿ÎÊ±¼ä£º2016Äê7ÔÂ27ÈÕ  14:00-17:00</span>
+<!--<span class="smallfont">£¨ÒÑ½áÊø£©</span>-->
+</p>
+<!--<p><span>¿Î³Ì½²Òå£º</span><a href="#" class="link01">µã»÷²é¿´</a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Î³Ì»Ø·Å£º</span><a href="#" class="link02">ÉÏ¼¯</a><span>&nbsp;/&nbsp;</span><a href="#" class="link02">ÏÂ¼¯</a></p>-->
+<p><span>ÇÀ¹º¼Û£º</span><span class="bigfont">&yen;500</span> Ôª</p>
+</div>
+<div class="btn">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42942" target="_blank" class="btn_buy"><img src="images/btn_buy.png" /></a>
+<a href="http://user.taxchina.com/wcm/cswsp/pay/ZBLogin.aspx?classid=844261" target="_blank" class="btn_study"><img src="images/btn_study.png" /></a>
+</div>
+</div>
+</div>
+</li>
+
+
+<li>
+<div class="content">
+<img src="images/zbmx_tu7b.jpg" />
+<div class="fenge">&nbsp;</div>
+<div class="info">
+<h3>¾´ÇëÆÚ´ý</h3>
+<dl>
+<dt>¿ÎÌâ´ó¸Ù£º</dt>
+<dd>´ý¶¨</dd>
+</dl>
+<div class="more">
+<p><span>½²Ê¦£º<b style="color:#F00; font-weight:normal;">´ý¶¨</b></span></p>
+<p><span>¿ª¿ÎÊ±¼ä£º´ý¶¨</span>
+<!--<span class="smallfont">£¨ÒÑ½áÊø£©</span>-->
+</p>
+<!--<p><span>¿Î³Ì½²Òå£º</span><a href="#" class="link01">µã»÷²é¿´</a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Î³Ì»Ø·Å£º</span><a href="#" class="link02">ÉÏ¼¯</a><span>&nbsp;/&nbsp;</span><a href="#" class="link02">ÏÂ¼¯</a></p>-->
+<p><span>ÇÀ¹º¼Û£º´ý¶¨</span></p>
+</div>
+<!--<div class="btn">
+<a href="#" target="_blank" class="btn_buy"><img src="images/btn_buy.png" /></a>
+<a href="#" target="_blank" class="btn_study"><img src="images/btn_study.png" /></a>
+</div>-->
+</div>
+</div>
+</li>
+
+
+<li>
+<div class="content">
+<img src="images/zbmx_tu7b.jpg" />
+<div class="fenge">&nbsp;</div>
+<div class="info">
+<h3>¾´ÇëÆÚ´ý</h3>
+<dl>
+<dt>¿ÎÌâ´ó¸Ù£º</dt>
+<dd>´ý¶¨</dd>
+</dl>
+<div class="more">
+<p><span>½²Ê¦£º<b style="color:#F00; font-weight:normal;">´ý¶¨</b></span></p>
+<p><span>¿ª¿ÎÊ±¼ä£º´ý¶¨</span>
+<!--<span class="smallfont">£¨ÒÑ½áÊø£©</span>-->
+</p>
+<!--<p><span>¿Î³Ì½²Òå£º</span><a href="#" class="link01">µã»÷²é¿´</a><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¿Î³Ì»Ø·Å£º</span><a href="#" class="link02">ÉÏ¼¯</a><span>&nbsp;/&nbsp;</span><a href="#" class="link02">ÏÂ¼¯</a></p>-->
+<p><span>ÇÀ¹º¼Û£º´ý¶¨</span></p>
+</div>
+<!--<div class="btn">
+<a href="#" target="_blank" class="btn_buy"><img src="images/btn_buy.png" /></a>
+<a href="#" target="_blank" class="btn_study"><img src="images/btn_study.png" /></a>
+</div>-->
+</div>
+</div>
+</li>
+
+
+
+
+</ul>
+</div>
+
+<!--  <div id="ifocus_opdiv"></div>-->
+    <div id="ifocus_tx">
+      <ul>
+        <li class="current"></li>
+        <li class="normal"></li>
+        <li class="normal"></li>
+        <li class="normal"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--Í¼Æ¬ÁÐ±í-->
+<div id="ifocus_btn">
+<ul>
+<li class="current"><a href="javascript:void(0);"><img src="images/hsqj17.jpg" /></a></li>
+<li class="normal"><a href="javascript:void(0);"><img src="images/hsqj18.jpg" /></a></li>
+<li class="normal"><a href="javascript:void(0);"><img src="images/zbmx_tu7.jpg" /></a></li>
+<li class="normal"><a href="javascript:void(0);"><img src="images/zbmx_tu7.jpg" /></a></li>
+
+</ul>
+</div>
+</div>
+<!--½üÆÚÖ±²¥½áÊø-->
+
+
+<!--¹ã¸æ¿ªÊ¼-->
+<div class="ad">
+<a href="#"><img src="../01wcm_images/liveimages/zbmx_gb.png" /></a>
+</div>
+<!--¹ã¸æ½áÊø-->
+<div class="block_jzy">
+<div class="jzy_line">
+<span id="lbkc">ÍùÆÚ¿Î³Ì</span>
+</div>
+<ul>
+
+<li><img src="images/hsqj18s.jpg" />
+<h3>·¿µØ²úÐÐÒµÔöÖµË°»á¼ÆºËËãÖØµã½âÎö</h3>
+<p>½² Ê¦£ºËïì¿
+ | <a href="http://www.taxchina.com/hsqj/jiexi0727.shtml">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844261&type=1">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844261&type=2">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º7ÔÂ27ÈÕ</p>
+</li>
+
+
+<li><img src="images/hsqj17s.jpg" />
+<h3>½¨ÖþÒµÆóÒµÓª¸ÄÔöÉæË°»á¼ÆºËËãÊµÎñ¼°·çÏÕ¹Ü¿Ø</h3>
+<p>½² Ê¦£ºÏÄÎÄ½Ü
+ | <a href="http://www.taxchina.com/hsqj/jiexi0726.shtml">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844260&type=1">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844260&type=2">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º7ÔÂ26ÈÕ</p>
+</li>
+
+
+<li><img src="images/hsqj16s.jpg" />
+<h3>½¨ÖþÒµ¸ßÐÂ¼¼ÊõÆóÒµÈÏÖ¤Ö¸µ¼</h3>
+<p>½² Ê¦£ºÕÔÐ¡¸Õ
+ | <a href="http://www.taxchina.com/hsqj/jiexi0722.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844258&type=1">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844258&type=2">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º7ÔÂ18ÈÕ</p>
+</li>
+
+<li><img src="images/hsqj15s.jpg" />
+<h3>¸ßÐÂ¼¼ÊõÆóÒµÈÏ¶¨¹ÜÀí°ì·¨½â¶ÁºÍ¹¤×÷Ö¸ÒýÔ¤²â</h3>
+<p>½² Ê¦£ºÕÔÐ¡¸Õ
+ | <a href="http://www.taxchina.com/hsqj/jiexi0629.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844115&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844115&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º06ÔÂ20ÈÕ</p>
+</li>
+
+
+
+
+
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42942" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+
+
+<div class="block_jzy">
+<div class="jzy_line">
+<span id="lbkc">ÍùÆÚ¿Î³Ì</span>
+</div>
+<ul>
+
+<li><img src="images/hsqj14s.jpg" />
+<h3>×îÐÂ»ü²éÕþ²ß½â¶ÁºÍÔöÖµË°»ü²é·çÏÕÓ¦¶Ô</h3>
+<p>½² Ê¦£ºÐìºØ
+<a href="http://www.taxchina.com/hsqj/jiexi0616.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844114&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=844114&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º06ÔÂ13ÈÕ</p>
+</li>
+
+<li><img src="images/hsqj12s.jpg" />
+<h3>Óª¸ÄÔö×îÐÂÕþ²ßÎÄ¼þµÄ»ã×Ü½â¶Á</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô
+ | <a href="http://www.taxchina.com/hsqj/jiexi0526.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843925&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843925&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º5ÔÂ26ÈÕ</p>
+</li>
+
+<li><img src="images/hsqj13s.jpg" />
+<h3>ÔöÖµË°¿ªÆ±Êµ²ÙÓëÄÉË°Éê±¨</h3>
+<p>½² Ê¦£ºÏÄÎÄ½Ü
+ | <a href="http://www.taxchina.com/hsqj/jiexi0525.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843924&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843924&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º5ÔÂ25ÈÕ</p>
+</li>
+
+<li><img src="images/hsqj10s.jpg" />
+<h3>Óª¸ÄÔöºóÐøÎÄ¼þ½â¶Á</h3>
+<p>½² Ê¦£ººÎÖÒ
+ | <a href="http://www.taxchina.com/hsqj/jiexi0519.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843612&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843612&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º04ÔÂ11ÈÕ</p>
+</li>
+
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42942" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+
+<!--Óª¸ÄÔö°æ¿é¿ªÊ¼-->
+<div class="block_jzy">
+<div class="jzy_line">
+<span id="lbkc">ÍùÆÚ¿Î³Ì</span>
+</div>
+<ul>
+<li><img src="images/hsqj6s.jpg" />
+<h3>·¿µØ²úÐÐÒµ¡°Óª¸ÄÔö¡±Õþ²ßÈ«Ãæ½â¶Á¼°Ó¦¶Ô</h3>
+<p>½² Ê¦£ºËïì¿
+ | <a href="http://www.taxchina.com/hsqj/jiexi0401.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843578&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843578&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º04ÔÂ01ÈÕ</p>
+</li>
+
+
+<li><img src="images/hsqj7s.jpg" />
+<h3>½¨Öþ°²×°ÐÐÒµ¡°Óª¸ÄÔö¡±Õþ²ßÈ«Ãæ½â¶Á¼°Ó¦¶Ô</h3>
+<p>½² Ê¦£ºÕÔÐ¡¸Õ
+ | <a href="http://www.taxchina.com/hsqj/jiexi0331.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843577&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843577&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ31ÈÕ</p>
+</li>
+
+
+<li><img src="images/hsqj8s.jpg" />
+<h3>½ðÈÚÐÐÒµ¡°Óª¸ÄÔö¡±Õþ²ßÈ«Ãæ½â¶Á¼°Ó¦¶Ô</h3>
+<p>½² Ê¦£ºÀîÐã»ª
+ | <a href="http://www.taxchina.com/hsqj/jiexi0330.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843576&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843576&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ30ÈÕ</p>
+</li>
+
+
+<li><img src="images/hsqj9s.jpg" />
+<h3>Éú»î·þÎñÐÐÒµ¡°Óª¸ÄÔö¡±Õþ²ßÈ«Ãæ½â¶Á¼°Ó¦¶Ô</h3>
+<p>½² Ê¦£ººÎÖÒ
+ | <a href="http://www.taxchina.com/hsqj/jiexi0329.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843575&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843575&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ29ÈÕ</p>
+</li>
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42891" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+<!--Óª¸ÄÔö°æ¿é½áÊø-->
+
+<!--»ãËãÇå½ÉÉê±¨±í°æ¿é¿ªÊ¼-->
+<div class="block_jzy">
+<div class="jzy_line">
+<span id="lbkc">»ãËãÇå½É</span>
+</div>
+<ul>
+<li><img src="../01wcm_images/liveimages/pic201601261725_0.jpg" />
+<h3>ÆóÒµËùµÃË°Äê¶ÈÄÉË°Éê±¨±íÐÞ¸ÄËµÃ÷Óë°¸ÀýÌî±¨</h3>
+<p>½² Ê¦£ºÀîÐã»ª | <a href="http://www.taxchina.com/hsqj/jiexi0201.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843068&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843068&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º02ÔÂ01ÈÕ</p>
+</li>
+<li><img src="images/hsqj1s.jpg" />
+<h3>¹ØÁª·½¹ØÏµ±í½²½â£¨ÉÏ£©</h3>
+<p>½² Ê¦£ºÕÔÐ¡¸Õ
+ | <a href="http://www.taxchina.com/hsqj/jiexi031001.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843227&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843227&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ10ÈÕ</p>
+</li>
+<li><img src="images/hsqj2s.jpg" />
+<h3>¹ØÁª·½¹ØÏµ±í½²½â£¨ÏÂ£©</h3>
+<p>½² Ê¦£ºÕÔÐ¡¸Õ
+ | <a href="http://www.taxchina.com/hsqj/jiexi031101.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843228&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843228&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ11ÈÕ</p>
+</li>
+<!--<li><img src="images/hsqj0s.jpg" />
+<h3>ËÄ´óÐÐÒµÓª¸ÄÔöÓ¦¶Ô·½°¸È«½âÎö</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô
+ | <a href="http://www.taxchina.com/hsqj/jiexi031102.shtml" target="_blank">½²Òå²é¿´</a>
+</p>
+<p>¿Î³Ì»Ø·Å£º
+<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843233&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=843233&type=2" target="_blank">ÏÂ¼¯</a>
+</p>
+<p>¿ª¿ÎÊ±¼ä£º03ÔÂ11ÈÕ</p>
+</li>-->
+<li>
+<img src="images/zbmx_tu7.jpg" />
+<h3>´ý  ¶¨</h3>
+<p>½² Ê¦£º´ý  ¶¨
+<!-- | <a href="#">½²Òå²é¿´</a>-->
+</p>
+<p>¿Î³Ì»Ø·Å£º¾´ÇëÆÚ´ý£¡
+<!--<a href="#">ÉÏ¼¯</a> / <a href="#">ÏÂ¼¯</a>
+-->
+</p>
+<p>¿ª¿ÎÊ±¼ä£º´ý  ¶¨</p>
+</li>
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42866" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+<!--»ãËãÇå½ÉÉê±¨±í°æ¿é½áÊø-->
+
+
+<!--·¢Æ±¹ÜÀí°æ¿é¿ªÊ¼-->
+<div class="block_jzy">
+<div class="jzy_line">
+<span>·¢Æ±¹ÜÀí</span>
+</div>
+<ul>
+<li><img src="../01wcm_images/liveimages/jqzb_h1_1_0.jpg" />
+<h3>»ãËãÇå½ÉÖÐÀûÓÃ·¢Æ±µÄ¼¼ÇÉ¼°·¢Æ±Î´À´Ç÷ÊÆ·ÖÎö£¨ÉÏ£©</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi0106.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842190&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842190&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º01ÔÂ07ÈÕ</p>
+</li>
+<li><img src="../01wcm_images/liveimages/jqzb_h1_2_0.jpg" />
+<h3>»ãËãÇå½ÉÖÐÀûÓÃ·¢Æ±µÄ¼¼ÇÉ¼°·¢Æ±Î´À´Ç÷ÊÆ·ÖÎö£¨ÏÂ£©</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi0106.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842189&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842189&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º01ÔÂ08ÈÕ</p>
+</li>
+<li><img src="../01wcm_images/liveimages/jqzb_h1_3_0.jpg" />
+<h3>ÆóÒµ·¢Æ±¹ÜÀíÖÆ¶ÈµÄ½¨Á¢</h3>
+<p>½² Ê¦£ºÐ¤Ì«ÊÙ | <a href="http://www.taxchina.com/hsqj/jiexi0111.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842188&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842188&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º01ÔÂ11ÈÕ</p>
+</li>
+<li>
+<img src="../01wcm_images/liveimages/jqzb_h1_4_0.jpg" />
+<h3>·¢Æ±¿ØË°²ßÂÔ</h3>
+<p>½² Ê¦£ºÐ¤Ì«ÊÙ | <a href="http://www.taxchina.com/hsqj/jiexi0112.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842187&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=842187&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º01ÔÂ12ÈÕ</p>
+</li>
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42807" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+<!--·¢Æ±¹ÜÀí°æ¿é½áÊø-->
+
+
+<!--½¨ÖþÒµ°æ¿é¿ªÊ¼-->
+<div class="block_jzy">
+<div class="jzy_line">
+<span>½¨ÖþÒµ</span>
+</div>
+<ul>
+<li><img src="../01wcm_images/liveimages/zbmx_tu1.png" />
+<h3>Óª¸ÄÔö¶Ô½¨ÖþÐÐÒµ¹ÜÀíµÄÓ°Ïì¼°Õ½ÂÔµ÷Õû</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi0630.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841100&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841100&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º06ÔÂ30ÈÕ</p>
+</li>
+<li><img src="../01wcm_images/liveimages/zbmx_tu2.png" />
+<h3>¸ÄÔö¶Ô½¨ÖþÆóÒµÄÚ²¿Ïà¹Ø²¿ÃÅºÍ¾­ÓªÐÎÊ½µÄÓ°Ïì¼°Ó¦¶Ô²ßÂÔ</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi0709.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841101&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841101&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º07ÔÂ09ÈÕ</p>
+</li>
+<li><img src="../01wcm_images/liveimages/zbmx_tu3.png" />
+<h3>Óª¸ÄÔöºó·¢Æ±µÄÖØÒªÐÔ½âÎö</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841102&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841102&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º07ÔÂ31ÈÕ</p>
+</li>
+<li>
+<img src="../01wcm_images/liveimages/zbmx_tu4.png" />
+<h3>Óª¸ÄÔöºóºÏÍ¬¹ÜÀí¼°·çÏÕ¹Ü¿Ø</h3>
+<p>½² Ê¦£ºËåÎÄ»Ô | <a href="http://www.taxchina.com/hsqj/jiexi0828.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841103&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841103&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º08ÔÂ28ÈÕ</p>
+</li>
+</ul>
+<div class="btn_jzy">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42685" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+<!--½¨ÖþÒµ°æ¿é½áÊø-->
+
+<!--·¿µØ²úÐÐÒµ°æ¿é¿ªÊ¼-->
+<div class="block_fdc">
+<div class="fdc_line">
+<span>·¿µØ²úÐÐÒµÓª¸ÄÔö</span>
+</div>
+<ul>
+<li><img src="../01wcm_images/liveimages/zbmx_tu5.png" />
+<h3>Óª¸ÄÔö¶Ô·¿µØ²úÆóÒµÄÚ²¿Ïà¹Ø²¿ÃÅºÍ¾­ÓªÐÎÊ½µÄÓ°Ïì</h3>
+<p>½² Ê¦£ºËï ì¿ | <a href="http://www.taxchina.com/hsqj/jiexi0807.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841114&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841114&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º08ÔÂ07ÈÕ</p>
+</li>
+<li><img src="../01wcm_images/liveimages/zbmx_tu6.png" />
+<h3>Óª¸ÄÔöºóÆóÒµÈ¡µÃ·¢Æ±µÄÖØÒªÐÔ·ÖÎö</h3>
+<p>½² Ê¦£ºËï ì¿ | <a href="http://www.taxchina.com/hsqj/jiexi0911.shtml" target="_blank">½²Òå²é¿´</a></p>
+<p>¿Î³Ì»Ø·Å£º<a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841116&type=1" target="_blank">ÉÏ¼¯</a> / <a href="http://user.taxchina.com/wcm/cswsp/pay/LBLogin.aspx?classid=841116&type=2" target="_blank">ÏÂ¼¯</a></p>
+<p>¿ª¿ÎÊ±¼ä£º09ÔÂ11ÈÕ</p>
+</li>
+<li><img src="images/zbmx_tu7.jpg" />
+<h3>´ý  ¶¨</h3>
+<p>½² Ê¦£º´ý  ¶¨
+<!-- | <a href="#">½²Òå²é¿´</a>-->
+</p>
+<p>¿Î³Ì»Ø·Å£º¾´ÇëÆÚ´ý£¡
+<!--<a href="#">ÉÏ¼¯</a> / <a href="#">ÏÂ¼¯</a>-->
+</p>
+<p>¿ª¿ÎÊ±¼ä£º´ý  ¶¨</p>
+</li>
+<li>
+<img src="images/zbmx_tu7.jpg" />
+<h3>´ý  ¶¨</h3>
+<p>½² Ê¦£º´ý  ¶¨
+<!-- | <a href="#">½²Òå²é¿´</a>-->
+</p>
+<p>¿Î³Ì»Ø·Å£º¾´ÇëÆÚ´ý£¡
+<!--<a href="#">ÉÏ¼¯</a> / <a href="#">ÏÂ¼¯</a>
+-->
+</p>
+<p>¿ª¿ÎÊ±¼ä£º´ý  ¶¨</p>
+</li>
+</ul>
+<div class="btn_fdc">
+<a href="http://user.taxchina.com/wcm/cswsp/pay/Default.aspx?nodeid=42685" target="_blank"><img src="../01wcm_images/liveimages/btn_buy.png" /></a>
+</div>
+</div>
+<!--·¿µØ²úÐÐÒµ°æ¿é½áÊø-->
+<div class="clear"></div>
+<!--µ×²¿¿ªÊ¼-->
+<!--#include virtual="/public/bottom.shtml" -->
+<!--µ×²¿½áÊø-->
+</body>
+</html>

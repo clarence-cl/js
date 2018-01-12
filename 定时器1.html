@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>定时器</title>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+	window.onload = function(){
+ var abtn = document.getElementsByTagName('input');
+ var arrurl = ['if/1.jpg','if/2.jpg','if/3.jpg','if/4.jpg']
+ var obody = document.body;
+ var num = 1;
+ var timer = null;
+ abtn[0].onclick=function(){
+ 	
+ 	clearInterval(timer);
+     timer=setInterval(function(){alert();
+     	obody.style.background='urt('+arrurl[num]+')';
+     	num++;
+     	num%=arrurl.lenght;
+     },1000)
+ }
+ abtn[1].onclick= function(){
+ 	clearInterval(timer);
+ }
+	};
+	function getstyle(obj,attr) {
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle[attr];
+		}
+	}
+</script>s
+</head>
+<body>
+<input type="button" value="换背景">
+<input type="button" value="停">
+</body>
+</html>

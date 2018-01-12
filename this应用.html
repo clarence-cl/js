@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>this应用</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	li{width:100px;height: 150px;float: left;margin-right: 30px;background: #f1f1f1;position: relative;}
+	div{width: 200px;height: 200px;background: red;position: absolute;top: 75;left: 10px;display: none;z-index:9999;}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+     var ali=document.getElementsByTagName('li');
+     for (var i=0;i<ali.length;i++) {
+     	ali[i].onmouseover=function(){
+     		this.getElementsByTagName('div')[0].style.display='block';
+     		this.style.zIndex='100';
+     	}
+     	ali[i].onmouseout=function(){
+     		this.getElementsByTagName('div')[0].style.display='none';
+     		this.style.zIndex='';
+     	}
+     }
+	};
+</script>
+</head>
+<body>
+<ul>
+	<li>
+		<div></div>
+	</li>
+	<li>
+		<div></div>
+	</li>
+	<li>
+		<div></div>
+	</li>
+</ul>
+</body>
+</html>

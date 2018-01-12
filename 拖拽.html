@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>拖拽</title>
+   <script type="text/javascript" src="jquery-1.11.3.js"></script>
+   <style type="text/css">
+   	div{
+   		overflow:hidden;
+   		position: absolute;
+   		top: 0;
+   		left: 0;
+   	}
+   </style>
+</head>
+<body>
+<div>
+	<img src="img/jt_s.png">
+</div>
+</body>
+<script type="text/javascript">
+/*	$(document).mousedown(function(event){
+       code = event.button;
+       if(code == 2){
+       	alert("点击右键")
+       }
+	})*/
+	/*右键禁用*/
+/*	$(document).contextmenu(function(){
+		x = event.clientX;
+		y = event.clientY;
+		return false
+       
+	})*/
+	function drag(obj){
+      obj.bind("mousedown",start)
+      function start(event){
+      	deltax = event.clientX-obj.offset().left;
+      	deltay = event.clientY-obj.offset().top;
+      	$(document).bind("mousemove",move);
+      	$(document).bind("mouseup",stop);
+      	return false;
+      }
+      function move(){
+      	obj.css({"left":(event.clientX-deltax)+"px","top":(event.clientY-deltay)+"px"
+      })
+      	return false;
+      }
+      function stop(){
+      	$(document).unbind("mousemove",move);
+      	$(document).unbind("mouseup",stop);
+      }
+	}
+	var obj = $("div")
+	drag(obj)
+</script>
+</html>

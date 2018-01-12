@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>for循环5</title>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+	window.onload=function(){
+  var obtn=document.getElementById('btn1');
+  var oul=document.getElementById('list');
+  var arr=['品牌的logo图案是一条斗牛犬',
+          '然而，这只狗的主人，就是王宝强的经纪人',
+          '我们再回到王宝强女儿生日会上',
+          '估计王宝强应该有 一件黑色的'];
+   var onoff=true;	
+          obtn.onclick=function(){ 
+if(onoff){
+          	for(var i=0;i<arr.length;i++)
+          		{oul.innerHTML +='<li>'+arr[i]+'</li>';};
+          }
+          onoff = false;
+          };		
+  };
+</script>
+</head>
+<body>
+<input id="btn1" type="button" value="生成"/>
+<ul id="list"></ul>
+</body>
+</html>

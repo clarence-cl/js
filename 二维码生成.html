@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+
+</head>
+<body>
+
+<div id="code"></div>
+</body>
+
+<script type="text/javascript" >
+$("#code").qrcode({
+  render: "table", //table方式
+  width: 200, //宽度
+  height:200, //高度
+  text: "www.codesky.net" //任意内容
+});
+  </script>
+</html>

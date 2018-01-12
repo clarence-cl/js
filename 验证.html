@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		<style type="text/css">
+		 .error{color: red;font-weight:700;display: none;}
+		</style>
+</head>
+<body>
+<form action="javascript;">
+	<p>中文名：</p>
+	<p>
+		<input type="text" name="username" class="auth">
+		<span class="error">用户名错误！</span>
+	</p>
+	<p>邮箱：</p>
+	<p>
+		<input type="text" name="password" class="auth">
+		<span class="error">邮箱错误！</span>
+	</p>
+	<p>身份证号：</p>
+	<p>
+		<input type="text" name="repassword" class="auth">
+		<span class="error">身份证号错误</span>
+	</p>
+	<p><input type="submit" value="ok"></ps>
+</form>
+</body>
+<script type="text/javascript">
+     function isChinaName(name) {
+    var pattern = /^[\u4e00-\u9fa5]{2,4}$/;
+    return pattern.test(name);
+}
+   $("input[name=username]").blur(function(){
+   	 val = this.value;
+
+   	 if($.trim(val).length == 0 || isChinaName(val) == false){
+      alert(1)
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+      alert(2)
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+/*    $("input[name=password]").blur(function(){
+   	 val = this.value;
+   	 if(val.length<8){
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+     $("input[name=repassword]").blur(function(){
+   	 val1 = this.value;
+     val2 = $("input[name=password]").val()
+   	 if(val1!=val2){
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+     $("form").submit(function(){
+      $(".auth").blur();
+      var tol = 0;
+      $(".auth").each(function(){
+      	tol+=$(this).data("s")
+      })
+      if(tol!=3){
+      	return false
+      }
+     })*/
+
+
+/*
+                     if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) ){
+                      var errorMsg = '请输入正确的E-Mail地址.';
+                      $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+                }else{
+                      var okMsg = '输入正确.';
+                      $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+                }邮箱验证*/
+
+
+/*                // 验证中文名称
+function isChinaName(name) {
+    var pattern = /^[\u4E00-\u9FA5]{1,6}$/;
+    return pattern.test(name);
+}
+     if($.trim($('#name').val()).length == 0) {
+        str += '名称没有输入\n';
+        $('#name').focus();
+    } else {
+        if(isChinaName($.trim($('#name').val())) == false) {
+            str += '名称不合法\n';
+            $('#name').focus();
+        }
+    }*/
+
+/*function isPhoneNo(phone) {  
+    var pattern = /^1[34578]\d{9}$/;  
+    return pattern.test(phone);  
+}
+ 
+// 验证身份证 
+function isCardNo(card) {  
+   var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;  
+   return pattern.test(card); 
+} 
+ 
+// 验证函数
+function formValidate() {
+    var str = '';
+ 
+    
+ 
+    // 判断手机号码
+    if ($.trim($('#phone').val()).length == 0) {  
+        str += '手机号没有输入\n';
+        $('#phone').focus();
+    } else {
+        if(isPhoneNo($.trim($('#phone').val()) == false)) {
+           str += '手机号码不正确\n';
+           $('#phone').focus();
+        }
+    }
+ 
+    // 验证身份证
+    if($.trim($('#identity').val()).length == 0) {  
+        str += '身份证号码没有输入\n';
+        $('#identity').focus();
+    } else {
+        if(isCardNo($.trim($('#identity').val())) == false) {
+            str += '身份证号不正确；\n';
+            $('#identity').focus();
+        }
+    }
+ 
+    // 验证地址
+    if($.trim($('#address').val()).length == 0) {  
+        str += '地址没有输入\n';
+        $('#address').focus();
+    }
+ 
+    // 如果没有错误则提交
+    if(str != '') {
+        alert(str);
+        return false;
+    } else {
+        $('.auth-form').submit();
+    }
+}
+ 
+$('#submit').on('click', function() {
+    console.log($.trim($('#name').val()).length, isChinaName($.trim($('#name').val())));
+    formValidate();
+});*/
+</script>
+</html>

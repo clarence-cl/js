@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="md5.js"></script>
+	
+</head>
+<body>
+<a ></a>
+</body>
+<script type="text/javascript">
+
+
+/*function unixtime(){
+var dt = new Date();
+var ux = Date.UTC(dt.getFullYear(),dt.getMonth(),dt.getDay(),dt.getHours(),dt.getMinutes(),dt.getSeconds())/1000;
+return ux;
+}*/
+function a() {
+alert(2);
+       $.ajax({
+       	type:'get',
+       	url:'http://crm.taxchina.com/wcm/inside/gkk/interface/Default.aspx?type=1&videoid=C9243BE9C3D744869C33DC5901307461',
+       	async:false,
+       	cache:false,
+       	success:function(data){
+       		/*var data = eval(data)*/
+       		alert(data)
+       	}
+       })
+}
+ a()
+</script>
+</html>

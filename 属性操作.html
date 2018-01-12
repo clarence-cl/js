@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>class属性操作</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	.sx{color: red;width: 300px;border: 2px solid #444;background: yellow;}
+	.ysx{color:yellow;width: 400px;border: 5px solid #444;background: red;}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var obtn1 = document.getElementById('btn1')
+		var obtn2 = document.getElementById('btn2')
+        var obtn3 = document.getElementById('btn3')
+		var obtn4 = document.getElementById('btn4')
+		var op = document.getElementById('p1')
+
+		var num = 15;
+		obtn1.onclick = function(){
+	    if (num<25){
+			num++;
+			op.style.fontSize = num+'px';
+		}
+		};
+        obtn2.onclick = function(){
+        	if (num>12) {
+        	num--;
+			op.style.fontSize = num+'px';
+		}
+		};
+		obtn3.onclick = function(){
+			op.className = 'sx';
+		};
+		obtn4.onclick = function(){
+			op.className = 'ysx';
+		};
+	};
+</script>
+</head>
+<body>
+<input id="btn1" type="button" value="+"/>
+<input id="btn2" type="button" value="-"/>
+<input id="btn3" type="button" value="红"/>
+<input id="btn4" type="button" value="黄"/>
+	<p id="p1" >里约奥运会开幕式虽然预算不够，好在还有创意来凑。总之，瑕不掩瑜。但厉害的不只有开幕式，还有网友们，总是能在茫茫镜头中挑出一些很好玩的事情来。请问，我们看的是同一场开幕式吗？</p>
+</body>
+</html>

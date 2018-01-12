@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>字符串</title>
+</head>
+<body>
+<input type="text" name="">
+<input type="button" value="检测" >
+<script type="text/javascript">
+  window.onload=function () {
+  var alnp=document.getElementsByTagName('input');
+  alnp[1].onclick=function(){
+  	if (detectnum(alnp[0].value)) {
+  		alert('恭喜'+alnp[0].value+'为数字')
+  	}
+  	else{alert('不是数字')}
+  }
+ function detectnum(str){
+ 	var num = 0;
+ 	for (var i = 0; i < str.length; i++) {
+ 		num = str[i].charCodeAt()
+ 		if(num<48||num>57)return false;
+ 	}
+ 	return true;
+ }
+}
+</script>
+</body>
+</html>

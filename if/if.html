@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>标签</title>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+
+window.onload=function(){
+	var oima1=document.getElementById('ima');
+    var onoff=true;
+    oima1.onclick = function(){
+     if (onoff) {oima1.src ='1.jpg';
+    	onoff=false;}
+     else{oima1.src ='2.jpg';
+    	onoff=true;}
+
+};
+};
+</script>
+</head>
+<body>
+	请输入类型：<input id="tex" type="text" />
+	<input id="btn" type="button" value="验证"/><br>
+	<img id="ima" src="1.jpg">
+</body>
+</html>

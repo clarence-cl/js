@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>观察者模式币种换算</title>
+</head>
+<body>
+   
+</body>
+<script type="text/javascript">
+//发布者
+	 function RMB(){
+	 	//收听者
+	 	 this.listener = [];
+         this.init()
+         //监听
+         this.bindEvent()
+	 }
+	 RMB.prototype.init = function() {
+	 	this.p = document.createElement("p");
+	 	this.p.innerHTML = "人民币:";
+	 	this.input = document.createElement("input");
+	 	this.p.appendChild(this.input)
+	 	document.body.appendChild(this.p)
+	 };
+     RMB.prototype.regist = function(obj){
+         this.listener.push(obj)
+     };
+     RMB.prototype.bindEvent = function(){
+       var self = this
+       this.input.oninput = function(){
+       	for (var i = 0; i < self.listener.length; i++) {
+       		self.listener[i].listen(this.value)
+       	}
+       }
+     };
+	 //订阅者
+	 function waibi(name,benbi,hl){
+        this.name = name;
+        benbi.regist(this);
+        this.hl=hl
+        this.init()
+	 };
+      
+      waibi.prototype.init = function() {
+	 	this.p = document.createElement("p");
+	 	this.p.innerHTML = this.name+":";
+	 	this.input = document.createElement("input");
+	 	this.p.appendChild(this.input)
+	 	document.body.appendChild(this.p)
+	 };
+     waibi.prototype.listen =function(content){
+     	console.log(content)
+     	this.input.value = content/this.hl
+     };
+
+	 var rmb = new RMB();
+	  new waibi("美元",rmb,6.2);
+	  new waibi("欧元",rmb,10.2);
+	  new waibi("港币",rmb,0.8);
+	  new waibi("日元",rmb,0.002);
+
+
+</script>
+</html>

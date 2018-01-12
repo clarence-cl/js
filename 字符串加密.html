@@ -1,0 +1,29 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+
+	</head>
+	<body>
+	<input type="text" >
+	<input type="button" value="加密">
+	<div style="width:100px;height:100px;color:#333;">加密...</div>
+	</body>
+	<script type="text/javascript">
+     window.onload = function () {
+     	var aip = document.getElementsByTagName('input');
+     	var odiv = document.getElementsByTagName('div')[0];
+
+     	aip[1].onclick=function(){
+     	var str = aip[0].value;
+     	var str1 ='';
+     		for (var i = 0; i < str.length; i++) {
+     			str1 += String.fromCharCode(str.charCodeAt(i)-1000);
+     			odiv.innerHTML=str1
+     		}
+     		
+     	}
+ 
+     }
+	</script>
+	</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div1{width: 100px;height: 100px;background: #f9c;position: absolute;top: 50px;left: 30px;}
+
+	</style>
+</head>
+<body>
+<input id="btn1" type="button" value="往后" name="">
+<input id="btn2" type="button" value="往前" name="">
+<div id="div1"></div>
+<script type="text/javascript">
+	window.onload=function () {
+   var odiv = document.getElementById('div1');
+   var obtn1 = document.getElementById('btn1');
+   var obtn2 = document.getElementById('btn2');
+   // var timer =null;
+   // odiv.timer = null;
+   obtn2.onclick=function(){
+/*   	clearInterval(odiv.timer);
+   	odiv.timer=setInterval(function(){
+   	var speed =	parseInt(getstyle(odiv,'left'))+10;
+   	if(speed>800){speed==800;}
+    odiv.style.left = speed+'px';
+    if(speed==800){
+    	clearInterval(odiv.timer);
+    }
+     },30)*/
+     domove(odiv,12,800)
+    }
+obtn1.onclick=function(){domove(odiv,-12,10)}
+
+    function domove(obj,dir,target) {
+    clearInterval(obj.timer);
+   	obj.timer=setInterval(function(){
+   	var speed =	parseInt(getstyle(obj,'left'))+dir;
+   	if(speed>target&&dir>0){speed=target;}  /*往前*/
+   	if(speed<target&&dir<0){speed=target;}  /*往后*/
+    obj.style.left = speed+'px';
+    if(speed==target){
+    	clearInterval(obj.timer);
+    }
+     },30)
+    }
+
+
+	function getstyle(obj,attr) {
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj)[attr];
+		}
+	}
+}
+</script>
+</body>
+</html>

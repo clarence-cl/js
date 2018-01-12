@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>标签</title>
+<meta charset="UTF-8">
+<title>js演示</title>
+<style type="text/css">
+	.sl{width: 100px;height: 100px;border: 2px solid #000000;}
+	.tc{width: 400px;height: 300px;background: green;position: absolute;top: 25%;left: 50%;z-index:1002;overflow: auto;display: none;}
+	.btc{width: 100%;height: 100%;background: transparent;position: relative;display: none;opacity:.80; z-index:1001;-moz-opacity: 0.8;opacity:.80;  filter: alpha(opacity=80);overflow: hidden; }
+	ul li{list-style: none;float: right;margin:5px 15px 0 0;padding:0 15px;background: #E1E1E1;}
+    .nav1{background: red;}
+    .nav2{background: yellow;}
+    .nav3{background: blue;}
+    input{margin: 70px;}
+</style>
+</head>
+<body>
+	<input type="reset" value="点击设置" name="reset" id="nav"  />
+	<div id="box1" class="sl"></div>
+	<div id="box" class="btc">	</div>
+	<div id="box2" class="tc">
+	<ul>选择背景：
+	   <li class="nav1" id="nav1">红</li> 
+	   <li class="nav2" id="nav2">黄</li> 
+	   <li class="nav3" id="nav3">蓝</li> 
+	   </ul>
+	   <ul>选择宽度：
+	   <li id="nav4">200px</li> 
+	   <li id="nav5">300px</li> 
+	   <li id="nav6">400px</li> 
+	   </ul>
+	<ul>选择高度：
+	   <li id="nav7">200px</li> 
+	   <li id="nav8">300px</li> 
+	   <li id="nav9">400px</li> 
+	   </ul>
+	<input id="navh" type="reset" value="恢复" name="reset" id="nav1"  />
+	<input id="navq" type="reset" value="确定" name="reset" id="nav2"  /> 
+	</div>
+	<script type="text/javascript">
+		window.onload=function ()  {
+	    var a = document.getElementById('nav');
+	    var b = document.getElementById('box1');
+	    var c = document.getElementById('box');
+	    var z = document.getElementById('box2');	    				 
+	    a.onclick=function() {
+	    	c.style.display = 'block';
+	    	z.style.display = 'block'; }
+	    var  d = document.getElementById('nav1')
+	    var  e = document.getElementById('nav2')
+	    var  f = document.getElementById('nav3')
+	    var  g = document.getElementById('nav4')
+	    var  h = document.getElementById('nav5')
+	    var  j = document.getElementById('nav6')
+	    var  k = document.getElementById('nav7')
+	    var  m = document.getElementById('nav8')
+	    var  i = document.getElementById('nav9')
+	    var n = document.getElementById('box1')
+	    var l = document.getElementById('navh')
+	    var q = document.getElementById('navq')
+
+	    d.onclick = function () {n.style.background = 'red';}
+	    e.onclick= function (){n.style.background = 'yellow';}
+	    f.onclick= function (){n.style.background = 'blue';}
+        g.onclick= function (){n.style.width = '200px';}
+        h.onclick= function (){n.style.width = '300px';}
+        j.onclick= function (){n.style.width= '400px';}
+        k.onclick= function (){n.style.height = '200px';}
+        m.onclick= function (){n.style.height = '300px';}
+        i.onclick= function (){n.style.height = '400px';}
+	    l.onclick = function(){
+	    	n.style.width = ' 100px';
+	    	n.style.height='100px';
+	    	n.style.background = '#FFFFFF';
+	    }
+	    q.onclick = function(){ c.style.display = 'none';}
+	}
+	</script> 
+	
+</body>
+</html>

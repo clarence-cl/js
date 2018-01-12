@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>懒人原生点击按钮加载更多(懒加载，每次加载N个)</title>
+	<style>
+	*{margin: 0;padding:0;list-style: none;}
+	body{background: #333;font-size: 14px;font-family:"微软雅黑"}
+	a{color: #333;text-decoration: none;}
+	.hidden{ display: none;}
+	.lanren{width: 800px;height: auto;margin:0 auto;overflow: hidden;text-align: left;background:#fff;padding:5px;}
+	.lanren ul.list{overflow: hidden;}
+	.lanren ul.list li{width: 150px;height: 150px;margin:5px;float: left;overflow: hidden;}
+	.lanren ul.list li img{width: 100%;height: 100%;}
+	.lanren ul.list p{text-align: center;padding: 10px;}
+	.lanren .more{overflow: hidden;padding:10px;text-align: center;}
+	.lanren .more a{display: block;width: 80px;padding:8px 0;color:#fff;margin:0 auto;background:#333;text-align:center;border-radius:3px;}
+	.lanren .more a:hover{text-decoration: none;background: red;color: #fff;}
+	</style>
+</head>
+<body>
+	<!--代码部分begin-->
+	<div class="lanren">
+		<div class="hidden">
+			<li><img src="images/1px.gif" realSrc="images/lanren01.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren02.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren03.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren04.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren05.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren06.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren07.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren08.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren09.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren10.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren11.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren12.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren13.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren14.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren15.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren16.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren17.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren18.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren19.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren20.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren21.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren22.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren23.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren24.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren25.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren26.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren27.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren28.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren29.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren30.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren31.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren32.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren33.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren34.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren35.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren36.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren37.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren38.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren39.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren40.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren41.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren42.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren43.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren44.jpg" width="150" height="150" /></li>
+			<li><img src="images/1px.gif" realSrc="images/lanren45.jpg" width="150" height="150" /></li>
+		</div>
+		<ul class="list">数据加载中，请稍后...</ul>
+		<div class="more"><a href="javascript:;" onClick="lanren.loadMore();">加载更多</a></div>
+	</div>
+	<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+	<script>
+		var _content = []; //临时存储li循环内容
+		var lanren = {
+			_default:10, //默认显示图片个数
+			_loading:5,  //每次点击按钮后加载的个数
+			init:function(){
+				var lis = $(".lanren .hidden li");
+				$(".lanren ul.list").html("");
+				for(var n=0;n<lanren._default;n++){
+					lis.eq(n).appendTo(".lanren ul.list");
+				}
+				$(".lanren ul.list img").each(function(){
+					$(this).attr('src',$(this).attr('realSrc'));
+				})
+				for(var i=lanren._default;i<lis.length;i++){
+					_content.push(lis.eq(i));
+				}
+				$(".lanren .hidden").html("");
+			},
+			loadMore:function(){
+				var mLis = $(".lanren ul.list li").length;
+				for(var i =0;i<lanren._loading;i++){
+					var target = _content.shift();
+					if(!target){
+						$('.lanren .more').html("<p>全部加载完毕...</p>");
+						break;
+					}
+					$(".lanren ul.list").append(target);
+					$(".lanren ul.list img").eq(mLis+i).each(function(){
+						$(this).attr('src',$(this).attr('realSrc'));
+					});
+				}
+			}
+		}
+		lanren.init();
+	</script>
+    <!--代码部分end-->
+</body>
+</html>

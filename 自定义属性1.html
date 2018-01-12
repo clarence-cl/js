@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>自定义属性</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	li{width:115px;height: 120px;list-style: none;background: url(1.png);float: left;margin-right: 20px;}
+
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+ var ali = document.getElementsByTagName('li');
+ for(var i=0;i<ali.length;i++){
+ 	ali[i].onoff=true;
+ 	ali[i].onclick=function () {
+ if (this.onoff) {
+ 	this.style.background='url(2.png)';
+ 	this.onoff=false;
+ }
+ else{
+ 	   this.style.background='url(1.png)';
+       this.onoff=true;
+      };
+ 	}
+  
+ };
+	};
+</script>
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>

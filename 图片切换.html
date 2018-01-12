@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>图片切换</title>
+<meta charset="UTF-8">
+<style type="text/css">
+ ul{padding: 0;margin: 0;}
+ li{list-style: none;}
+ body{background: #333;}
+ #pic{ width: 400px;height: 500px;position: relative;margin: 0 auto;}
+ #pic img{ width: 400px;height: 500px; }
+ #pic ul{width:40px;position: absolute;top: 0;right: -50px;}
+ #pic li{width: 40px;height: 40px;margin-bottom: 4px;background: #666;}
+ #pic .active{background: #FC3;}
+ #pic span{top: 0;}
+  #pic p{bottom: 0;}
+ #pic p,#pic span{position:absolute;left:0;width: 400px;height: 30px;line-height: 30px;text-align: center;color: #fff;background: #000;}
+</style>
+<script>
+window.onload=function(){
+  var odiv=document.getElementById('pic');
+  var oimg=odiv.getElementsByTagName('img')[0];
+  var ospan=odiv.getElementsByTagName('span')[0];
+  var op=odiv.getElementsByTagName('p')[0];
+  var oul =odiv.getElementsByTagName('ul')[0];
+  var ali =oul.getElementsByTagName('li');
+  var arrurl=['if/1.jpg','if/2.jpg','if/3.jpg','if/4.jpg'];
+  var arrtext=['图一','图二','图三','图四'];
+   var num=0;
+   var oldli = null;
+   for (var i = 0; i < arrurl.length; i++) {
+     oul.innerHTML+='<li></li>';
+   }
+   oldli=ali[num];
+
+
+
+//初始化
+
+ oimg.src=arrurl[num];
+ ospan.innerHTML=1+num+'/'+arrurl.length;
+ op.innerHTML=arrtext[num];
+ ali[num].className='active';
+
+ for (var i = 0; i < ali.length; i++) {
+   ali[i].index=i;
+   ali[i].onclick=function (){
+
+    oimg.src=arrurl[this.index];
+    op.innerHTML=arrtext[this.index];
+    ospan.innerHTML=1+this.index+'/'+arrtext.length;
+   /* for (var i = 0; i < ali.length; i++) {
+      ali[i].className='';
+    }
+    this.className='active';*/
+    oldli.className='';
+    oldli=this;
+    this.className='active';
+
+   };
+ }
+
+
+};
+</script>
+</head>
+<body>
+<div id="pic">
+ <img src=""> 
+ <span>加载</span>
+ <p>加载</p>
+ <ul>
+ </ul>
+</div>
+</body>
+</html>

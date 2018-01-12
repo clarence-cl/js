@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta content="always" name="referrer">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>考试信息收集系统_税务信息化管理师_人力资源和社会保障部</title>	
+	<script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="jQuery.XDomainRequest.js"></script>
+	<script type="text/javascript" src="jquery.xdomainrequest.min.js"></script>
+</head>
+<body>
+
+
+
+
+
+</body>
+
+	<script type="text/javascript">
+	/*查询详细信息*/	
+
+	  function zuixinzhibo()
+	  {
+	  	$.ajax({
+	  		type:"post",
+	  		url:"http://yd.taxchina.com/wcm/inside/gkk/interface/productList.aspx?mode=10",
+	  		dataType:"json",
+	  		cache:false,
+	  		success:function(html)
+	  		{
+	  			//var data=eval(html);
+       alert(1)
+    
+	  		}
+	  	})
+	  }
+
+/*ie*/
+	  $(function(){
+       zuixinzhibo()
+        
+	  })
+
+	</script>	
+</html>

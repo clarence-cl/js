@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>函数传参</title>
+<meta charset="UTF-8">
+<title></title>
+<script type="text/javascript">
+fn1(100);
+fn1('women');
+fn1(function(){alert(1)});
+function fn1(a){
+	if (typeof a==='number'&&a===a) {
+		alert(a+100);
+	}
+	else if (typeof a==='string') {
+		alert(a.charAt(2));
+	}else if (typeof a==='function') {
+		a();
+	}
+}
+</script>
+</head>
+
+</html>

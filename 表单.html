@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<script src="jquery-1.11.3.js"></script>
+		<style type="text/css">
+		 .error{color: red;font-weight:700;display: none;}
+		</style>
+</head>
+<body>
+<form action="javascript;">
+	<p>用户名：</p>
+	<p>
+		<input type="text" name="username" class="auth">
+		<span class="error">用户名错误！</span>
+	</p>
+	<p>密码：</p>
+	<p>
+		<input type="text" name="password" class="auth">
+		<span class="error">密码错误！</span>
+	</p>
+	<p>确认密码：</p>
+	<p>
+		<input type="text" name="repassword" class="auth">
+		<span class="error">两次密码不一致</span>
+	</p>
+	<p><input type="submit" value="ok"></ps>
+</form>
+</body>
+<script type="text/javascript">
+   $("input[name=username]").blur(function(){
+   	 val = this.value;
+   	 if(val.length<6){
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+    $("input[name=password]").blur(function(){
+   	 val = this.value;
+   	 if(val.length<8){
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+     $("input[name=repassword]").blur(function(){
+   	 val1 = this.value;
+     val2 = $("input[name=password]").val()
+   	 if(val1!=val2){
+   	 	$(this).data("s",0)
+   	 	$(this).next().show()
+   	 }else{
+   	 	$(this).data("s",1)
+   	 	$(this).next().hide()
+   	 }
+   })
+     $("form").submit(function(){
+      $(".auth").blur();
+      var tol = 0;
+      $(".auth").each(function(){
+      	tol+=$(this).data("s")
+      })
+      if(tol!=3){
+      	return false
+      }
+     })
+
+
+/*
+                     if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) ){
+                      var errorMsg = '请输入正确的E-Mail地址.';
+                      $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+                }else{
+                      var okMsg = '输入正确.';
+                      $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+                }邮箱验证*/
+</script>
+</html>

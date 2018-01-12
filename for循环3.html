@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>for循环3</title>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	div{width: 50px;background: red;position: absolute;top: 0;left: 0;font-size: 30px;text-align: center;line-height: 50px;color: #fff;}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		var adiv=document.getElementsByTagName('div');
+for (var i=0;i<20;i++) {
+	document.body.innerHTML+='<div>'+i+'</div>';
+      };
+ for(var i=0;i<adiv.length;i++){
+ 	if (i=10) {adiv[i].style.left=10+i*60+'px'+'<br>';}
+      	else{adiv[i].style.left=10+i*60+'px'}
+      }
+  };
+</script>
+</head>
+<body>
+
+</body>
+</html>
