@@ -12,16 +12,18 @@
  // 时：Math.floor(t%86400/3600);
  // 分： Math.floor(t%86400%3600/60);
  // 秒：t%60
- var anew = new Date( 2017,2,17,0,0,0)
+ var anew = new Date(2018,6,14,24,0,0)
 /* var anew = new Date('june 10,2017 12:12:12')字符串格式*/
 setInterval(function(){
-   var anow = new Date();
+  var anow = new Date();
+  console.log(anew)
+  console.log(anow)
   var t = Math.floor((anew-anow)/1000)
   var str = Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'小时'+Math.floor(t%86400%3600/60)+'分钟'+t%60+'秒';
   document.body.innerHTML = str
 },1000)
- 
- 
+
+
 }
 </script>
 </body>
