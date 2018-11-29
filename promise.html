@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+      <title>promise</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+var arr1 = [1,2,3]
+var arr2 = [4,5,6]
+Array.prototype.push.apply(arr1,arr2)//es5
+arr1.push(...arr2)//es6
+console.log(arr1)//合并连个数组
+console.log(Math.max.apply(null,arr1))//获取数组最大值
+console.log(Math.min.apply(null,arr1))//获取数组最小值
+   function fn() {
+     var  p = new Promise(function(resolve,reject){
+         setTimeout(function(){
+          console.log("2秒后执行")
+          resolve("这里是数据0")
+         },1000)
+     });
+     return p
+   }
+   function fn1(){
+    var p = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve("这里是数据1")
+      },2000)
+    })
+    return p
+   }
+   function fn2(){
+    var p = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve("这里是数据2")
+      },1000)
+    })
+    return p
+   }
+   function fn3(){
+    var p = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve("这里是数据3")
+      },2000)
+    })
+    return p
+   }
+   fn().
+   then(function(data){
+     console.log(data)
+     return fn1()
+   })
+   .then(function(data){
+    console.log(data)
+     return fn2()
+   })
+   .then(function(data){
+    console.log(data)
+    return fn3()
+   })
+   .then(function(data){
+     console.log(data)
+    return "这里是数据"
+   }).then(function(data){
+     console.log(data)
+   })
+
+   function getNum(){
+    var p = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        var num = Math.ceil(Math.random()*10); //生成1-10的随机数
+        if(num<5){
+          resolve(num)
+        }else{
+          reject("数值太大")
+        }
+      },2000)
+    })
+    return p
+   }
+   getNum().
+   then(
+    function(data){
+      console.log('resolved')
+      console.log(data)
+   },
+   function(reason,data){
+     console.log('rejected')
+     console.log(reason)
+   })
+  //all
+  Promise
+  .all([fn1(), fn2(), fn3()])
+  .then(function(results){
+      console.log(results);
+  });
+//race 谁快先执行
+   Promise
+   .race([fn1(),fn2(),fn3()])
+   .then(function(results){
+    console.log(results);
+});
+</script>
+</html>
